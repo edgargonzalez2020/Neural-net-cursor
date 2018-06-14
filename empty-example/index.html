@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.6"> </script>
+    <script src="sketch.js"></script>
+    <script src="net.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <style>
+  *{
+    font-family: 'Open Sans', sans-serif;
+  }
+    fieldset{
+      border:3px solid black;
+    }
+    #optimizer{
+      display: inline-block;
+      padding-bottom:5px;
+    }
+  </style>
+  <body>
+    <div class="flex-container">
+      <div id="canvas-holder"></div>
+      <section>
+          <fieldset>
+            <legend>Configure your Neural Network!!</legend>
+            <div class = "config">
+              <p1>Optimizer: </p1>
+              <select id="optimizer_drop">
+                <option value = "sgd">SGD</option>
+                <option value = "adam">ADAM</option>
+                <option value = "adamax">ADAMAX</option>
+                <option value = "adadelta">ADADELTA</option>
+                <option value = "rmsprop">RMSPROP</option>
+              </select>
+            </div>
+            <div class = "config">
+              <p1>Activation: </p1>
+              <select id="activation_drop">
+                <option value = "elu">ELU</option>
+                <option value = "relu">RELU</option>
+                <option value = "hardSigmoid">HARD SIGMOID</option>
+                <option value = "linear">LINEAR</option>
+                <option value = "sigmoid">SIGMOID</option>
+                <option value = "softmax">SOFTMAX</option>
+                <option value = "tanh">TANH</option>
+              </select>
+            </div>
+            <div class = "config">
+              <p1>Loss: </p1>
+              <select id="loss_drop">
+                <option value = "absoluteDifference">ABSOLUTE DIFFRENCE</option>
+                <option value = "computeWeightedloss">WEIGHTED LOSS</option>
+                <option value = "cosineDistance">COSINE DISTANCE</option>
+                <option value = "logLoss">LOG LOSS</option>
+                <option value = "meanSquaredError">MEAN SQUARED ERROR</option>
+                <option value = "softmaxCrossEntropy">SOFTMAX</option>
+              </select>
+            </div>
+            <div class="config">
+              <p1> Hidden Layers: </p1>
+              <input type = "text" placeholder = 2 id = "hidden_text">
+            </div>
+            <div class="config">
+              <p1> Epochs: </p1>
+              <input type = "text" placeholder = 1 id = "epochs_text">
+            </div>
+            <div class="config">
+              <p1> Learning Rate: </p1>
+              <input type = "text" placeholder = 0.2 id = "lr_text">
+            </div>
+            <input type="submit" value="Submit" onclick ="handleSubmit()">
+          </fieldset>
+      </section>
+      <section>
+        <div>
+          <h1> Learn More! </h1>
+          <h4> Optimizers </h4>
+          <ul>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent"> Stochastic Gradient Descent </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
