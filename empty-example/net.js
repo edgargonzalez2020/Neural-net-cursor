@@ -1,10 +1,10 @@
 class NeuralNet{
-  constructor(LR=0.2,optimizer="sgd",activation="sigmoid",hiddenLayers=2,lossFucntion="meanSquaredError",epochs=1){
+  constructor(LR=0.2,optimizer="sgd",activation="sigmoid",hiddenLayers=2,lossF="meanSquaredError",epochs=1){
     this.LR = LR;
     this.optimizer = optimizer;
     this.activation = activation;
     this.hiddenLayers = hiddenLayers;
-    this.lossFunction = lossFucntion;
+    this.lossFunction = lossF;
     this.epochs = epochs;
     this.model = tf.sequential();
     // allow use to create custom Neural net
@@ -26,18 +26,24 @@ class NeuralNet{
       this.model.add(hidden);
       this.model.add(outputs);
       let userOptimizer;
-      let tfLoss;
       switch (this.optimizer) {
-        case "adam": userOptimizer = tf.train.adam(this.LR); break;
-        case "adamax": userOptimizer = tf.train.adamax(this.LR); break;
-        case "adadelta": userOptimizer = tf.train.adadelta(this.LR); break;
-        case "rmsprop": userOptimizer = tf.train.rmsprop(this.LR); break;
-        default:  userOptimizer = tf.train.sgd(this.LR);
+          case "adam": userOptimizer = tf.train.adam(this.LR); break;
+          case "adamax": userOptimizer = tf.train.adamax(this.LR); break;
+          case "adadelta": userOptimizer = tf.train.adadelta(this.LR); break;
+          case "rmsprop": userOptimizer = tf.train.rmsprop(this.LR); break;
+          default:  userOptimizer = tf.train.sgd(this.LR);
       }
-
+      let userLoss;
+      switch (this.lossFunction){
+          case "absoluteDifference": userLoss = tf.losses.absoluteDifference;break;
+          case "cosineDistance": userLoss = tf.losses.cosineDistance;break;
+          case "logLoss": userLoss = tf.losses.logLoss;break;
+          case "softmaxCrossEntropy": userLoss = tf.losses.softmaxCrossEntropy;break;
+          default: userLoss = tf.losses.meanSquaredError;
+      }
       this.model.compile({
-          optimizer:userOptimizer,
-          loss:this.lossFunction
+          optimizer:this.optimizer,
+          loss:userLoss
       });
   }
   async train(first,second){

@@ -31,26 +31,34 @@ function handleSubmit(){
   let optimizer = document.getElementById('optimizer_drop').value;
   let activation = document.getElementById('activation_drop').value;
 
-  let epoch = parseInt(document.getElementById('epochs_text').value);
-  let hidden = parseInt(document.getElementById('hidden_text').value);
-  let learning_rate = parseFloat(document.getElementById('lr_text').value);
-  console.log(epoch,hidden,learning_rate)
+  let epoch = document.getElementById('epochs_text').value;
+  let hidden = document.getElementById('hidden_text').value;
+  let learning_rate = document.getElementById('lr_text').value;
+  console.log(epoch,hidden,learning_rate);
   if(isNaN(epoch) || epoch < 0)
   {
-  //  alert('Enter a valid integer for epoch');
+    alert("Epoch must be a positive number");
     epoch = 1;
     console.log(typeof(epoch));
   }
   if(isNaN(hidden) || hidden < 0)
   {
-    //alert('Enter a valid integer for hidden');
+    alert("Hidden layers must be a positive number");
     hidden = 2;
   }
-  if(isNaN(learning_rate) || learning_rate >= 1 || learning_rate <= 0)
+  if(learning_rate >= 1 || learning_rate <= 0)
   {
-    //alert('Enter a valid integer for learning_rate');
-    learning_rate = 0.2;
+      alert("Learning rate must be an integer from 0 to 1");
+      learning_rate = 0.2;
   }
-  brain= new NeuralNet(learning_rate,optimizer,activation,hidden,loss,epoch);
+  brain = new NeuralNet(learning_rate,optimizer,activation,hidden,loss,epoch);
   brain.buildNeuralNet();
+}
+function checkInput(x) {
+    var regex=/^[0-9]+$/;
+    if(x.match(regex)){
+        alert("Must input numbers!");
+        return false;
+    }
+
 }

@@ -4,8 +4,6 @@
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
     <style> body {padding: 0; margin: 0;} </style>
     <script src="../p5.min.js"></script>
-    <script src="../addons/p5.dom.min.js"></script>
-    <script src="../addons/p5.sound.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.6"> </script>
     <script src="sketch.js"></script>
     <script src="net.js"></script>
@@ -34,8 +32,6 @@
               <select id="optimizer_drop">
                 <option value = "sgd">SGD</option>
                 <option value = "adam">ADAM</option>
-                <option value = "adamax">ADAMAX</option>
-                <option value = "adadelta">ADADELTA</option>
                 <option value = "rmsprop">RMSPROP</option>
               </select>
             </div>
@@ -55,39 +51,57 @@
               <p1>Loss: </p1>
               <select id="loss_drop">
                 <option value = "absoluteDifference">ABSOLUTE DIFFRENCE</option>
-                <option value = "computeWeightedloss">WEIGHTED LOSS</option>
-                <option value = "cosineDistance">COSINE DISTANCE</option>
-                <option value = "logLoss">LOG LOSS</option>
                 <option value = "meanSquaredError">MEAN SQUARED ERROR</option>
-                <option value = "softmaxCrossEntropy">SOFTMAX</option>
               </select>
             </div>
             <div class="config">
               <p1> Hidden Layers: </p1>
-              <input type = "text" placeholder = 2 id = "hidden_text">
+              <input type = "number" placeholder = 2 id = "hidden_text">
             </div>
             <div class="config">
               <p1> Epochs: </p1>
-              <input type = "text" placeholder = 1 id = "epochs_text">
+              <input type = "number" placeholder = 1 id = "epochs_text">
             </div>
             <div class="config">
               <p1> Learning Rate: </p1>
-              <input type = "text" placeholder = 0.2 id = "lr_text">
+              <input type = "number" placeholder = 0.2 id = "lr_text">
             </div>
             <input type="submit" value="Submit" onclick ="handleSubmit()">
           </fieldset>
       </section>
-      <section>
-        <div>
-          <h1> Learn More! </h1>
-          <h4> Optimizers </h4>
-          <ul>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent"> Stochastic Gradient Descent </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <aside>
+        <h1>Goal</h1>
+        <p>The goal is to train the Neural Net to learn the position of the mouse cursor using Supervised Learing!</p>
+        <h1>
+          Requirements
+        </h1>
+        <p><b>Numerical Inputs</b>
+        </p>
+        <ul>
+          <li>
+            Hidden Layers
+            <ul>
+              <li>
+                <i>Must be a number greater than 0.</i>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Epochs
+            <ul>
+              <li><i>Must be a number greater than 0.</i></li>
+            </ul>
+          </li>
+          <li>
+            Learning Rate
+            <ul>
+              <li><i>Must be a number greater than 0 but strictly less than 1</i></li>
+            </ul>
+          </li>
+        </ul>
+        <h1>Comments</h1>
+        <p>The animation may seem to slow down the higher the epochs. This is because the Neural Net is training every frame and the epochs add an intensive overhead.</p>
+      </aside>
     </div>
   </body>
 </html>
