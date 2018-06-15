@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5234b288-82bc-4457-beb1-a1381c6b723d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty-example/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/empty-example/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty-example/net.js" beforeDir="false" afterPath="$PROJECT_DIR$/empty-example/net.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty-example/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/empty-example/sketch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/p5.dom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/p5.dom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty-example/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty-example/net.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty-example/sketch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/p5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/p5.min.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,35 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sketch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/empty-example/sketch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="net.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/empty-example/net.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/empty-example/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="75" column="114" selection-start-line="75" selection-start-column="114" selection-end-line="75" selection-end-column="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -94,11 +69,6 @@
               <item name="Neural Network Mouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="Neural Network Mouse" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Neural Network Mouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Neural Network Mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="empty-example" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -134,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1528563965474</updated>
       <workItem from="1528563966787" duration="8584000" />
-      <workItem from="1529018813894" duration="4189000" />
+      <workItem from="1529018813894" duration="4413000" />
     </task>
     <task id="LOCAL-00001" summary="First commit.">
       <created>1529018998667</created>
@@ -147,11 +117,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12773000" />
+    <option name="totallyTimeSpent" value="12997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -245,8 +214,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/empty-example/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="114" selection-start-line="75" selection-start-column="114" selection-end-line="75" selection-end-column="114" />
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
