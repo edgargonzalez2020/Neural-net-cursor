@@ -1,30 +1,34 @@
 let brain;
 let canvas;
+let point;
 function setup() {
     brain = new NeuralNet();
     brain.buildNeuralNet();
+    point = new Circle();
     canvas = createCanvas(400, 400);
     canvas.parent('canvas-holder');
 }
 function draw() {
-  // noLoop();
     background(0);
-    fill(255);
-    ellipse(mouseX,mouseY,5,5);
-    let first = map(mouseX,0,400,0,1);
-    let second = map(mouseY,0,400,0,1);
+    point.show();
+    let first = map(point.getX(),0,400,0,1);
+    let second = map(point.getY(),0,400,0,1);
     brain.train(first,second);
     drawCircle();
 }
+function mouseDragged(){
+    point.update(mouseX,mouseY);
+
+}
 function drawCircle(){
   // compare prediction values against actual values
-  const prediction = brain.predict();
-  var mappedPredictionX = map(prediction[0],0,1,0,400);
-  var mappedPredictionY = map(prediction[1],0,1,0,400);
+  const prediction = brain.predict(point.getX(),point.getY());
+  let mappedPredictionX = map(prediction[0],0,1,0,400);
+  let mappedPredictionY = map(prediction[1],0,1,0,400);
   noFill();
   stroke(255);
   strokeWeight(2);
-  ellipse(mappedPredictionX,mappedPredictionY,20,20);
+  ellipse(mappedPredictionX,mappedPredictionY,40,40);
 }
 function handleSubmit(){
   let loss = document.getElementById('loss_drop').value;
@@ -55,7 +59,7 @@ function handleSubmit(){
   brain.buildNeuralNet();
 }
 function checkInput(x) {
-    var regex=/^[0-9]+$/;
+    let regex=/^[0-9]+$/;
     if(x.match(regex)){
         alert("Must input numbers!");
         return false;

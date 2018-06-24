@@ -4,11 +4,13 @@
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
     <style> body {padding: 0; margin: 0;} </style>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.6"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <script src="./src/sketch.js"></script>
     <script src="./src/net.js"></script>
+    <script src="./src/circle.js"></script>
+
+
   </head>
   <style>
   *{
@@ -29,7 +31,7 @@
           <fieldset>
             <legend>Configure your Neural Network!!</legend>
             <div class = "config">
-              <p1>Optimizer: </p1>
+              <p>Optimizer: </p>
               <select id="optimizer_drop">
                 <option value = "sgd">SGD</option>
                 <option value = "adam">ADAM</option>
@@ -37,7 +39,7 @@
               </select>
             </div>
             <div class = "config">
-              <p1>Activation: </p1>
+              <p>Activation: </p>
               <select id="activation_drop">
                 <option value = "elu">ELU</option>
                 <option value = "relu">RELU</option>
@@ -49,22 +51,22 @@
               </select>
             </div>
             <div class = "config">
-              <p1>Loss: </p1>
+              <p>Loss: </p>
               <select id="loss_drop">
                 <option value = "absoluteDifference">ABSOLUTE DIFFRENCE</option>
                 <option value = "meanSquaredError">MEAN SQUARED ERROR</option>
               </select>
             </div>
             <div class="config">
-              <p1> Hidden Layers: </p1>
+              <p> Hidden Layers: </p>
               <input type = "number" placeholder = 2 id = "hidden_text">
             </div>
             <div class="config">
-              <p1> Epochs: </p1>
+              <p> Epochs: </p>
               <input type = "number" placeholder = 1 id = "epochs_text">
             </div>
             <div class="config">
-              <p1> Learning Rate: </p1>
+              <p> Learning Rate: </p>
               <input type = "number" placeholder = 0.2 id = "lr_text">
             </div>
             <input type="submit" value="Submit" onclick ="handleSubmit()">

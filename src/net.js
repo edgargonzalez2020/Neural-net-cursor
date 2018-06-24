@@ -13,7 +13,7 @@ class NeuralNet{
       // Neural network with 2 inputs x,y and 2 outputs the x,y of the circle
 
       const hidden = tf.layers.dense({
-         units:this.hiddenLayers,
+         units:2,
          inputShape:[2],
          activation:this.activation
       });
@@ -60,10 +60,10 @@ class NeuralNet{
       return history;
   }
 
-  predict(){
+  predict(x,y){
       // make a prediction based on the current mouse x and y location normalized to a value in => [0,1]
-      let mappedX = map(mouseX,0,400,0,1);
-      let mappedY = map(mouseY,0,400,0,1);
+      let mappedX = map(x,0,400,0,1);
+      let mappedY = map(y,0,400,0,1);
       const prediction = tf.tensor2d([[mappedX,mappedY]]);
       const output = this.model.predict(prediction);
       let predictionX = output.dataSync()[0];
