@@ -15,13 +15,13 @@
   <style>
   *{
     font-family: 'Open Sans', sans-serif;
+
   }
     fieldset{
       border:3px solid black;
     }
     #optimizer{
       display: inline-block;
-      padding-bottom:5px;
     }
   </style>
   <body>
@@ -31,7 +31,7 @@
           <fieldset>
             <legend>Configure your Neural Network!!</legend>
             <div class = "config">
-              <p>Optimizer: </p>
+              Optimizer:
               <select id="optimizer_drop">
                 <option value = "sgd">SGD</option>
                 <option value = "adam">ADAM</option>
@@ -39,7 +39,7 @@
               </select>
             </div>
             <div class = "config">
-              <p>Activation: </p>
+              Activation:
               <select id="activation_drop">
                 <option value = "elu">ELU</option>
                 <option value = "relu">RELU</option>
@@ -50,29 +50,21 @@
                 <option value = "tanh">TANH</option>
               </select>
             </div>
-            <div class = "config">
-              <p>Loss: </p>
-              <select id="loss_drop">
-                <option value = "absoluteDifference">ABSOLUTE DIFFRENCE</option>
-                <option value = "meanSquaredError">MEAN SQUARED ERROR</option>
-              </select>
+            <div class="config">
+              Hidden Layers: <input type = "number" placeholder = 2 id = "hidden_text">
             </div>
             <div class="config">
-              <p> Hidden Layers: </p>
-              <input type = "number" placeholder = 2 id = "hidden_text">
+              Epochs: <input type = "number" placeholder = 1 id = "epochs_text">
             </div>
             <div class="config">
-              <p> Epochs: </p>
-              <input type = "number" placeholder = 1 id = "epochs_text">
+              Learning Rate: <input type = "number" placeholder = 0.2 id = "lr_text">
             </div>
-            <div class="config">
-              <p> Learning Rate: </p>
-              <input type = "number" placeholder = 0.2 id = "lr_text">
-            </div>
+
             <input type="submit" value="Submit" onclick ="handleSubmit()">
           </fieldset>
       </section>
       <aside>
+        *<i style="color:red">Only works on desktops/laptops.</i>
         <h1>Goal</h1>
         <p>The goal is to train the Neural Net to learn the position of the mouse cursor using Supervised Learing!</p>
         <h1>
