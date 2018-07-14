@@ -18,13 +18,12 @@ function draw() {
 }
 function mouseDragged(){
     point.update(mouseX,mouseY);
-
 }
 function drawCircle(){
   // compare prediction values against actual values
   const prediction = brain.predict(point.getX(),point.getY());
   let mappedPredictionX = map(prediction[0],0,1,0,400);
-  let mappedPredictionY = map(prediction[1],0,1,0,400);
+  let mappedPredictionY = map(prediction[1], 0, 1, 0, 400);
   noFill();
   stroke(255);
   strokeWeight(2);

@@ -42,7 +42,7 @@ class NeuralNet{
           default: userLoss = tf.losses.meanSquaredError;
       }
       this.model.compile({
-          optimizer:this.optimizer,
+          optimizer:userOptimizer,
           loss:userLoss
       });
   }
